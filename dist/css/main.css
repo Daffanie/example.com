@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-*{
+p{
     font-family: 'Open Sans', sans-serif;
 }
 
 .avatar {
-    border-radius: 50%;
+     border-radius: 50%;
     float: left;
     margin-right: 1em;
 }
@@ -53,4 +53,10 @@ nav ul li a:visited{
 
 nav ul li a:hover{
     background: #444;
+}
+
+main{
+    margin: 0, auto;
+    width: 960px; 
+    max-width: 100%;
 }
