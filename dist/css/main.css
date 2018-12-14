@@ -82,13 +82,50 @@ main{
         left: 0;
         right: 0;
     }
+
+    .contact-form{
+        max-width: 300px;
+        margin: 0 auto;
+        background: #ccc;
+        border-radius: 6px;
+        padding: 1.5rem 1rem;
+    }
+
+    .contact-form label{
+        display: block;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea{
+        font-size: 2rem;
+        padding: .5rem .25rem;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        box-sizing: border-box;
+    }
+
+    .contact-form input[type="submit"]{
+        font-size: 2rem;
+        padding: 5rem 1rem; 
+    }
         
     #toggleMenu {
         display: block;
         float: right;
         line-height: 50px;
     }
-    
+
+    @media only screen and (max-width: 420px) {
+        .contact-form input[type="submit"]{
+            display: block;
+            width: 100%;
+        }
+        
+    }
+      
     nav ul li a,
     nav ul li a:link,
     nav ul li a:visited{
