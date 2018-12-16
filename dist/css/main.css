@@ -124,7 +124,7 @@ main{
    
 }
 
-h2{
+h3{
     text-align: center;
     margin-top: 2rem;
 }
@@ -133,11 +133,76 @@ h2{
     float: left;
 }
 
-.sub-headings p{
-    text-indent: 50px;
+.first{
+    margin-top: -1rem;
+    padding-left: 23px;
 
 }
-    
+
+.second-subhead{
+    margin-bottom: -1rem;
+    text-align: center;
+}
+
+table{
+   margin-top: -1rem;
+   box-sizing: content-box;
+   width: 75%;
+   padding-left: 16rem;
+   letter-spacing: -.06rem;
+   line-height: -1rem;
+
+}
+
+td li{
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+.section-three{
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.float-right{
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+}
+.second-table{
+   margin-top: -0.5rem;
+   box-sizing: content-box;
+   width: 100%;
+   padding-inline-start: 1.5rem;
+   padding-inline-end: 20rem;
+   letter-spacing: 0rem; 
+   line-height: -1.5rem;
+}
+
+.bob{
+    margin-top: -1rem;
+    padding-left: 1.5rem;
+}
+
+h4{
+    padding-left: 1.5rem;
+    margin-bottom: -0.5rem;
+}
+
+.bullet-four li{
+    list-style-position: inside;
+    padding-left: 0.4rem;
+   
+}
+
+.section-ed p{
+    padding-left: 1.5rem;
+    line-height: 0.4rem;
+}
+
+.agile{
+    margin-top: -0.3rem;
+}
+  
 #toggleMenu {
     display: block;
     float: right;
