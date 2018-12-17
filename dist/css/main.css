@@ -2,6 +2,7 @@
 
 p{
     font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
 }
 
 body{
@@ -131,6 +132,7 @@ h3{
 
 .sub-headings h2 ul li{
     float: left;
+    
 }
 
 .first{
@@ -194,15 +196,24 @@ h4{
    
 }
 
-.section-ed p{
-    padding-left: 1.5rem;
-    line-height: 0.4rem;
+h2{
+    text-align: center;
 }
 
-.agile{
-    margin-top: -0.3rem;
+/*.float-lefted {
+    float: left;
+    padding-left: 1rem;
+ }*/
+
+.float-righted{
+    float: right;
 }
-  
+
+.section-ed p{
+    padding-left: 1.0rem;
+    margin-top: -0.3rem;
+} 
+
 #toggleMenu {
     display: block;
     float: right;
