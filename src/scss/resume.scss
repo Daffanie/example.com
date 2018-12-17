@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    height: 50px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 .5rem 0 1rem;
+}
+
+header .logo{
+    line-height: 50px;
+    font-weight: bold;
+}
+
+nav{
+    float: right;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li{
+    display: inline;
+}
+
+nav ul li a,
+nav ul li a:link,
+nav ul li a:visited{
+    display: inline-block;
+    padding: 0 .5em;
+    color: #fff;
+    line-height: 50px;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    background: #444;
+}
+
+.clearfix:after{
+    content:"";
+    display: table;
+    clear: both;
+}
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
+.avatar {
+    border-radius: 50%;
+   float: left;
+   margin-right: 1em;
+}
+
+main{
+    margin: 0 auto;
+    width: 960px;
+    max-width: 100%;
+}
+
+.resume-heading{
+  text-align: center;
+
+}
+
+.resume-heading h1{
+ font-size: 32px;
+ margin-bottom: -0.5rem;
+}
+
+.resume-heading h4{
+  margin-top: .2rem;
+
+}
+
+h3{
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.sub-headings h2 ul li{
+  float: left;
+
+}
+
+.first{
+  margin-top: -1rem;
+  padding-left: 23px;
+
+}
+
+.second-subhead{
+  margin-bottom: -1rem;
+  text-align: center;
+}
+
+table{
+ margin-top: -1rem;
+ box-sizing: content-box;
+ width: 75%;
+ padding-left: 16rem;
+ letter-spacing: -.06rem;
+ line-height: -1rem;
+
+}
+
+td li{
+  list-style-type: circle;
+  list-style-position: inside;
+}
+
+.section-three{
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.float-right{
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+}
+.second-table{
+ margin-top: -0.5rem;
+ box-sizing: content-box;
+ width: 100%;
+ padding-inline-start: 1.5rem;
+ padding-inline-end: 20rem;
+ letter-spacing: 0rem;
+ line-height: -1.5rem;
+}
+
+.bob{
+  margin-top: -1rem;
+  padding-left: 1.5rem;
+}
+
+h4{
+  padding-left: 1.5rem;
+  margin-bottom: -0.5rem;
+}
+
+.bullet-four li{
+  list-style-position: inside;
+  padding-left: 0.4rem;
+
+}
+
+h2{
+  text-align: center;
+}
+
+/*.float-lefted {
+  float: left;
+  padding-left: 1rem;
+}*/
+
+.float-righted{
+  float: right;
+}
+
+.section-ed p{
+  padding-left: 1.0rem;
+  margin-top: -0.3rem;
+}
+
+#toggleMenu {
+  display: block;
+  float: right;
+  line-height: 50px;
+}
+
+#toggleMenu {
+  display: none;
+}
+
+@media only screen and (max-width: 960px) {
+  main {
+      max-width: 90;
+      }
+
+  header {
+      position: relative;
+  }
+
+  nav{
+      position: absolute;
+      display: none;
+      background: #000;
+      top: 50px;
+      left: 0;
+      right: 0;
+  }
+
+
+  @media only screen and (max-width: 420px) {
+      .contact-form input[type="submit"]{
+          display: block;
+          width: 100%;
+      }
+
+  }
+
+  nav ul li a,
+  nav ul li a:link,
+  nav ul li a:visited{
+      display: block;
+      border-bottom: 1px solid #777;
+  }
+}
