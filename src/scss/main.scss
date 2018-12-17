@@ -28,7 +28,7 @@ nav{
 
 nav ul{
     margin: 0;
-    padding: 0; 
+    padding: 0;
     list-style: none;
 }
 
@@ -72,7 +72,7 @@ nav ul li a:hover{
 
 main{
     margin: 0 auto;
-    width: 960px; 
+    width: 960px;
     max-width: 100%;
 }
 
@@ -86,7 +86,7 @@ main{
 
 .contact-form h1{
     margin: 0;
-    text-align: center; 
+    text-align: center;
 }
 
 .contact-form label{
@@ -107,12 +107,12 @@ main{
 
 .contact-form input[type="submit"]{
     font-size: 2rem;
-    padding: 1.5rem 1rem; 
+    padding: 1.5rem 1rem;
 }
 
 .resume-heading{
     text-align: center;
-    
+
 }
 
 .resume-heading h1{
@@ -122,7 +122,7 @@ main{
 
 .resume-heading h4{
     margin-top: .2rem;
-   
+
 }
 
 h3{
@@ -132,7 +132,7 @@ h3{
 
 .sub-headings h2 ul li{
     float: left;
-    
+
 }
 
 .first{
@@ -176,7 +176,7 @@ td li{
    width: 100%;
    padding-inline-start: 1.5rem;
    padding-inline-end: 20rem;
-   letter-spacing: 0rem; 
+   letter-spacing: 0rem;
    line-height: -1.5rem;
 }
 
@@ -193,7 +193,7 @@ h4{
 .bullet-four li{
     list-style-position: inside;
     padding-left: 0.4rem;
-   
+
 }
 
 h2{
@@ -212,7 +212,7 @@ h2{
 .section-ed p{
     padding-left: 1.0rem;
     margin-top: -0.3rem;
-} 
+}
 
 #toggleMenu {
     display: block;
@@ -231,8 +231,8 @@ h2{
 
     header {
         position: relative;
-    } 
-    
+    }
+
     nav{
         position: absolute;
         display: none;
@@ -248,9 +248,9 @@ h2{
             display: block;
             width: 100%;
         }
-        
+
     }
-      
+
     nav ul li a,
     nav ul li a:link,
     nav ul li a:visited{

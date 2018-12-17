@@ -27,9 +27,30 @@ gulp.task('build-css', function(){
   . pipe(concat('main.min.css'))
   . pipe(gulp.dest('dist/css'));
 
-  return merge(full, min);
+  //Create a minified version
+  var resFull = gulp.src([
+    'src/scss/main.scss',
+    'src/scss/resume.scss',
+  ])
+  . pipe(scss())
+  . pipe(concat('resume.css'))
+  . pipe(gulp.dest('dist/css'));
+
+  //Create a minified version
+  var resMin = gulp.src([
+    'src/scss/main.scss',
+    'src/scss/resume.scss',
+  ])
+  . pipe(scss())
+  . pipe(cleanCSS())
+  . pipe(concat('resume.min.css'))
+  . pipe(gulp.dest('dist/css'));
+
+  return merge(full, min, resFull, resMin);
 });
 
 gulp.task('watch', function(){
-  gulp.watch('./public/src/scss/**/*.scss', ['build-css']);
+  gulp.watch('./src/scss/**/*.scss', ['build-css']);
 });
+
+
