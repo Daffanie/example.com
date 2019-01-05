@@ -20,13 +20,13 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link text-white" href="#">Home<span class="sr-only">(current)</span></a>
+              <a class="nav-link text-white" href="index.php">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">Resume</a>
+              <a class="nav-link text-white" href="resume.php">Resume</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">Contact</a>
+              <a class="nav-link text-white" href="contact.php">Contact</a>
             </li>
           </ul>
           <span class="navbar-text">

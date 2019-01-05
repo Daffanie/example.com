@@ -1,3 +1,13 @@
+<br><br><br><br>
+<?php
+$data = $_POST;
+
+foreach($data as $key => $value){
+  echo "{$key} = {$value}<br>";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,16 +25,16 @@
         <a id="toggleMenu">Menu</a>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="resume.php">Resume</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </nav>
     </header>
-            
+
 <main>
-    
-    <form class="contact-form" action="https://formspree.io/daffhur50@gmail.com" method="POST">
+
+    <form action="contact.php" method="POST">
         <h1>Contact Form</h1>
         <div>
             <label for="name">Name</label>
@@ -33,7 +43,7 @@
 
         <div>
             <label for="email">Email</label>
-            <input id="email" type="text" name="_replyto">  
+            <input id="email" type="text" name="replyto">
         </div>
 
         <div>
@@ -42,9 +52,7 @@
         </div>
 
         <div>
-            <input type="hidden" name="_subject" value="New submission!">
-            <input type="hidden" name="_next" value="//Daffanie.github.io/thanks.html!">
-            
+            <input type="hidden" name="subject" value="New submission!">
         </div>
 
         <div>
@@ -64,8 +72,8 @@
               }
             }
           );
-        
+
     </script>
 </main>
 </body>
-</html>    
+</html>
