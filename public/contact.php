@@ -1,8 +1,10 @@
 <?php
 
 require '../core/Daffanie/src/Validation/validate.php';
+require '../vendor/autoload.php';
 
 use Daffanie\Validation;
+use Mailgun\Mailgun;
 
 $message = null;
 $valid = new Daffanie\Validation\validate();
@@ -38,6 +40,24 @@ if(!empty($input)){
   $valid->check($input);
 
   if(empty($valid->errors)){
+
+  # Include the Autoloader (see "Libraries" for install instructions)
+
+  # Instantiate the client.
+  $mgClient = new Mailgun('708458919d32a888dc53587c14828114-060550c6-13802a3c');
+  $domain = "sandbox6a66d09438a34b6697f540f393b42fe2.mailgun.org";
+
+  # Make the call to the client.
+  $result = $mgClient->sendMessage("$domain",array(
+        'from'    => "{$input['name']} <{$input['email']}>",
+        'to'      => 'Daffanie Hurley <daffhur50@gmail.com>',
+        'subject' => $input['subject'],
+        'text'    => $input['message']
+      )
+  );
+
+var_dump($result);
+
     $message = "<div class=\"alert alert-success\">Your form has been submitted!</div>";
   }else{
     $message = "<div class=\"alert alert-danger\">Your form has errors!</div>";
