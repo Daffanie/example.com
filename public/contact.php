@@ -44,7 +44,7 @@ if(!empty($input)){
 
   # Include the Autoloader (see "Libraries" for install instructions)
 
-  # Instantiate the client.
+  /*# Instantiate the client.
   $mgClient = new Mailgun(MG_KEY);
   $domain = MG_DOMAIN;
 
@@ -57,15 +57,29 @@ if(!empty($input)){
       )
   );
 
-var_dump($result);
+*/
+  mail(
+    'daffhur50@gmail.com',
+    $input['subject'],
+    $input['message'],
+    "From: {$input['email']}"
+  );
 
-    $message = "<div class=\"alert alert-success\">Your form has been submitted!</div>";
-  }else{
+  var_dump($result);
+  $response = 200;
+
+if($response === 200){
+  //$message = "<div class=\"alert alert-success\">Your form has been submitted!</div>";
+  //header('LOCATION: thanks.php');
+}
+else{
     $message = "<div class=\"alert alert-danger\">Your form has errors!</div>";
+    }
   }
 }
 
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
