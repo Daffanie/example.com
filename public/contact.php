@@ -1,5 +1,6 @@
 <?php
 
+require '../config/keys.php';
 require '../core/Daffanie/src/Validation/validate.php';
 require '../vendor/autoload.php';
 
@@ -44,8 +45,8 @@ if(!empty($input)){
   # Include the Autoloader (see "Libraries" for install instructions)
 
   # Instantiate the client.
-  $mgClient = new Mailgun('708458919d32a888dc53587c14828114-060550c6-13802a3c');
-  $domain = "sandbox6a66d09438a34b6697f540f393b42fe2.mailgun.org";
+  $mgClient = new Mailgun(MG_KEY);
+  $domain = MG_DOMAIN;
 
   # Make the call to the client.
   $result = $mgClient->sendMessage("$domain",array(
