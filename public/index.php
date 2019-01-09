@@ -1,41 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require '../core/processContactForm.php';
+$meta=[];
+$meta['title']='Contact Daffanie';
+$meta['Description']='Contact Daffanie';
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Daffanie Hurley</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <script src="main.js"></script>
-</head>
+$content = <<<EOT
+  {$message}
 
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
-        <a class="navbar-brand text-white" href="#">Daffanie Hurley Website</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link text-white" href="index.php">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="resume.php">Resume</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="contact.php">Contact</a>
-            </li>
-          </ul>
-          <span class="navbar-text">
-            Navbar text with an inline element
-          </span>
-        </div>
-      </nav>
-
-      <br>
       <div class="jumbotron">
           <h1 class="display-6">Hi, I am Daffanie Hurley</h1>
           <p img class="avatar" style="border-radius: 50%; float: left; margin-right: 1em;" src="https://www.gravatar.com/avatar/4678a33bf44c38e54a58745033b4d5c6?d=mm&s=64/nav"
@@ -107,10 +78,10 @@
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+EOT;
 
-</body>
+require '../core/layout.php';
 
-</html>
+
+
+

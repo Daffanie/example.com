@@ -1,7 +1,6 @@
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-/*p{
+p{
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
 }
@@ -75,9 +74,7 @@ main{
     margin: 0 auto;
     width: 960px;
     max-width: 100%;
-}*/
-
-
+}
 
 .resume-heading{
   text-align: center;
@@ -85,12 +82,12 @@ main{
 }
 
 .resume-heading h1{
- font-size: 20px;
+ font-size: 19px;
  margin-bottom: 0rem;
 }
 
 .resume-heading h4{
-  font-size: 18px;
+  font-size: 17px;
   margin-top: .2rem;
 
 }

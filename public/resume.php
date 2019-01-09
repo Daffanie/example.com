@@ -1,104 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require '../core/processContactForm.php';
+$meta=[];
+$meta['title']='Resume Daffanie';
+$meta['Description']='Resume Daffanie';
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Daffanie Resume</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./dist/css/main.css">
-    <link rel="stylesheet" type="text/css" href="./dist/css/resume.css">
-    <script src="main.js"></script>
-</head>
+$content = <<<EOT
+  {$message}
+<main>
+  <section class="resume-heading">
+  <br><br><br>
+    <h1>Daffanie Hurley</h1>
+    <h4>Chicago, Illinois 60620 <br> 773-891-2094 <br> daffhur50@gmail.com</h4>
 
-<body>
-      <header>
-        <span class="logo">Daffanie Hurley Website</span>
-        <a id="toggleMenu">Menu</a>
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="resume.php">Resume</a></li>
-                <li><a href="contact.php">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  </section>
 
-    <main>
+  <section class="sub-headings">
+    <h3>Full Stack Web and Hybrid Mobile Applications Developer</h3>
+    <p class="first">Full stack web and hybrid mobile applications developer specializing in full stack
+      JavaScript application and architectures. Experienced in all stages of the development life cycle, well versed in numerous
+      programming languages.</p>
+    <ul>
+      <li>Hands-on experience leading all stages of system development efforts, including requirements in
+          definition design, architecture, testing and support.</li>
 
-        <section class="resume-heading">
-            <h1>Daffanie Hurley</h1>
-            <h4>Chicago, Illinois 60620 773-891-2094 daffhur50@gmail.com</h4>
-        </section>
+      <li>Outstanding leadership abilities; able to coordinate and direct all phases of project-based
+          efforts.</li>
+    </ul>
+  </section>
 
-        <section>
-            <h3 class="sub-headings">Full Stack Web and Hybrid Mobile Applications Developer</h3>
-            <p class="first">Full stack web and hybrid mobile applications developer specializing in full stack
-                JavaScript application
-                and architectures. Experienced in all stages of the development life cycle, well versed in numerous
-                programming languages.</p>
-            <ul>
-                <li>Hands-on experience leading all stages of system development efforts, including requirements in
-                    definition design, architecture, testing and support.</li>
-                <li>Outstanding leadership abilities; able to coordinate and direct all phases of project-based
-                    efforts.
-                </li>
-            </ul>
-        </section>
+  <section class="core-head">
+    <h3><em>Core Competencies</em></h3>
+      <table>
+        <ul>
+          <tr>
+          <td>
+            <li>Full Stack Development</li>
+          </td>
+          <td>
+            <li>Hybrid Mobile Development</li>
+          </td>
+          </tr>
 
-        <section>
-            <h3 class="second-subhead"><em>Core Competencies</em></h3>
-            <table>
-                <ul>
-                    <tr>
-                        <td>
-                            <li>Full Stack Development</li>
-                        </td>
-                        <td>
-                            <li>Hybrid Mobile Development</li>
-                        </td>
-                    </tr>
+          <tr>
+          <td>
+            <li>Strong Analytical Skills</li>
+          </td>
+          <td>
+            <li>Savvy Problem Solver</li>
+          </td>
+          </tr>
 
-                    <tr>
-                        <td>
-                            <li>Strong Analytical Skills</li>
-                        </td>
-                        <td>
-                            <li>Savvy Problem Solver</li>
-                        </td>
-                    </tr>
+          <tr>
+          <td>
+            <li>Prioritizes Tasks</li>
+          </td>
+          <td>
+            <li>Strong Leadership Skills</li>
+          </td>
+          </tr>
+        </ul>
 
-                    <tr>
-                        <td>
-                            <li>Prioritizes Tasks</li>
-                        </td>
-                        <td>
-                            <li>Strong Leadership Skills</li>
-                        </td>
-                    </tr>
-                </ul>
+      </table>
+  </section>
 
-            </table>
-        </section>
+  <section>
 
-        <section>
+    <h4 class="section-three">CERTIFICATIONS / TECHNICAL PROFICIENCIES</h4>
+      <table class="second-table">
+        <tr>
+          <td>Certifications:</td>
+          <td>Agile Certified Scrum Master</td>
+        </tr>
 
-            <h4 class="section-three">CERTIFICATIONS / TECHNICAL PROFICIENCIES</h4>
-            <table class="second-table">
-                <tr>
-                    <td>Certifications:</td>
-                    <td>Agile Certified Scrum Master</td>
-                </tr>
+        <tr>
+          <td>Platforms:</td>
+          <td>Linux, Windows, Mac, LAMP, MEAN, NodeJS</td>
+        </tr>
 
-                <tr>
-                    <td>Platforms:</td>
-                    <td>Linux, Windows, Mac, LAMP, MEAN, NodeJS</td>
-                </tr>
-
-                <tr>
-                    <td>Database:</td>
-                    <td>MySQL, MongoDB</td>
-                </tr>
+        <tr>
+          <td>Database:</td>
+          <td>MySQL, MongoDB</td>
+        </tr>
 
                 <tr>
                     <td>Tools:</td>
@@ -111,9 +93,9 @@
                 </tr>
             </table>
 
-        </section>
+  </section>
 
-        <section>
+  <section>
             <h4 class="section-three">PROFESSIONAL EXPERIENCE</h4>
 
             <h4 class="clearfix">
@@ -140,35 +122,23 @@
                 <li>Recognized for the development of excellent business relationships, providing exemplary customer
                     service.</li>
             </ul>
-        </section>
+  </section>
 
-        <section class="section-ed">
-            <h2>EDUCATION</h2>
-            <h3 class="clearfix">
+  <section class="section-ed">
+    <h2>EDUCATION</h2>
+    <h3 class="clearfix">
                 Devry University - Chicgo, IL
                 <span class="float-righted">2011 - 2015</span><br>
                 <P><strong>Bachelor of Science in Computer Information Systems</strong></p><br>
                 <span class="float-lefted">MicroTrain Technologies – Chicago, IL </span>
                 <span class="float-righted">2015</span><br>
                 <p><strong>Agile Full Stack Web and Hybrid Mobile Application Development</strong></p>
-        </section>
+  </section>
 
-        <script>
-            var toggleMenu = document.getElementById('toggleMenu');
-            var nav = document.querySelector('nav');
-            toggleMenu.addEventListener(
-                'click',
-                function () {
-                    if (nav.style.display == 'block') {
-                        nav.style.display = 'none';
-                    } else {
-                        nav.style.display = 'block';
-                    }
-                }
-            );
+</main>
 
-        </script>
-    </main>
-</body>
+EOT;
 
-</html>
+require '../core/layout.php';
+
+
