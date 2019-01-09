@@ -1,3 +1,17 @@
+
+<?php
+
+function active($name){
+  $current = $_SERVER ['REQUEST_URI'];
+  if($current === $name){
+    return 'active';
+  }
+
+  return null;
+}
+
+?>
+
 <!Doctype html>
 <html lang="en">
   <head>
@@ -18,6 +32,7 @@
 
     <?php endif; ?>
 
+    <base href="/">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -38,14 +53,18 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.php">Home</a>
+                  <a class="nav-link <?php echo active('/'); ?>" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="resume.php">Resume</a>
+                  <a class="nav-link <?php echo active('resume.php'); ?>" href="resume.php">Resume</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.php">Contact</a>
+                  <a class="nav-link <?php echo active('contact.php'); ?>" href="contact.php">Contact</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link <?php echo active('/posts'); ?>" href="posts">Posts</a>
+                </li>
+                <li>
             </ul>
         </div>
     </nav>
