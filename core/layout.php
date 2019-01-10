@@ -44,7 +44,7 @@ function active($name){
     <title>Daffanie Hurley</title>
   </head>
   <body>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-danger">
+  <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-danger">
         <a class="navbar-brand" href="#">Daffanie Hurley</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

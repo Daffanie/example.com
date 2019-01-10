@@ -22,9 +22,9 @@ SET
 
   SELECT
     posts.title,
-    CONCAT(users.first_name, ' ', users.last_name) as author
+    CONCAT(users.first_name, ' ', users.last_name) AS author
   FROM
     posts,
     users
   WHERE
-    posts.user_id = users.id;
+    posts.created_user_id = users.id;

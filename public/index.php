@@ -8,7 +8,7 @@ $content = <<<EOT
   {$message}
 
       <div class="jumbotron">
-          <h1 class="display-6">Hi, I am Daffanie Hurley</h1>
+          <h1 class="display-6"><br>Hi, I am Daffanie Hurley</h1>
           <p img class="avatar" style="border-radius: 50%; float: left; margin-right: 1em;" src="https://www.gravatar.com/avatar/4678a33bf44c38e54a58745033b4d5c6?d=mm&s=64/nav"
           alt="D.Hurley">
           Hello, my name is Daffanie and I am a vegan.</p>
