@@ -10,8 +10,8 @@ require '../../core/db_connect.php';
 $get = filter_input_array(INPUT_GET);
 $id = $get['id'];
 
-$stmt = $pdo->prepare("SELECT * FROM users WHERE id=:email");
-$stmt->execute(['email'=>$id]);
+$stmt = $pdo->prepare("SELECT * FROM users WHERE id=:id");
+$stmt->execute(['id'=>$id]);
 
 $row = $stmt->fetch();
 
@@ -22,7 +22,7 @@ if(empty($row)){
 }
 
 $meta=[];
-$meta['title']="Edit: {$row['title']}";
+$meta['title']="Edit: {$row['first_name']} {$row['last_name']}";
 
 //Update the user
 $message = null;
@@ -35,16 +35,12 @@ $args = [
 ];
 
 
-$input = filter_input_array(INPUT_User, $args);
+$input = filter_input_array(INPUT_POST, $args);
 
 if(!empty($input)){
 
     //Strip white space, from beginning and ending
     $input = array_map('trim', $input);
-
-    //Allow only whitelisted HTML
-    $input['body'] = cleanHTML($input['body']);
-
 
     //Sanitized insert
     $sql = 'UPDATE
@@ -69,43 +65,31 @@ if(!empty($input)){
 }
 
 $content = <<<EOT
-<br><br><br><h1>Edit: {$row['title']}</h1>
+<br><br><br><h1>Edit: {$row['first_name']} {$row['last_name']}</h1>
 {$message}
 <form method="post">
 
 <input name="id" value="{$row['id']}" type="hidden">
 
 <div class="form-group">
-    <br><label for="title">Title</label>
-    <input id="title" value="{$row['title']}" name="title" type="text" class="form-control">
+    <br><label for="first_name">First Name</label>
+    <input id="first_name" name="first_name" type="text" class="form-control">
 </div>
 
 <div class="form-group">
-    <label for="body">Body</label>
-    <textarea id="body" name="body" rows="8" class="form-control">
-    {$row['body']}
-    </textarea>
+    <br><label for="last_name">First Name</label>
+    <input id="last_name" name="last_name" type="text" class="form-control">
 </div>
 
-<div class="row">
-    <div class="form-group col-md-6">
-        <label for="meta_description">Description</label>
-        <textarea id="meta_description" name="meta_description" rows="2" class="form-control">
-        {$row['meta_description']}
-        </textarea>
-    </div>
-
-    <div class="form-group col-md-6">
-        <label for="meta_keywords">Keywords</label>
-        <textarea id="meta_keywords" name="meta_keywords" rows="2" class="form-control">
-        {$row['meta_keywords']}
-        </textarea>
-    </div>
+<div class="form-group">
+    <br><label for="email">Email</label>
+    <input id="email" name="email" type="email" class="form-control">
 </div>
 
 <div class="form-group">
     <input type="submit" value="Submit" class="btn btn-primary">
 </div>
+
 </form>
 
 EOT;

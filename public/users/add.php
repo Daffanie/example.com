@@ -43,6 +43,8 @@ if(!empty($input)){
 
 $content = <<<EOT
 <br><br><br><h1>Add a New User</h1>
+
+{$message}
 <form method="post">
 
 <div class="form-group">
@@ -51,7 +53,7 @@ $content = <<<EOT
 </div>
 
 <div class="form-group">
-    <br><label for="last_name">First Name</label>
+    <br><label for="last_name">Last Name</label>
     <input id="last_name" name="last_name" type="text" class="form-control">
 </div>
 

@@ -24,11 +24,11 @@ if(!empty($input['confirm'])){
 }
 
 $meta=[];
-$meta['title']="DELETE: {$row['title']}";
+$meta['title']="DELETE: {$row['first_name']} {$row['last_name']}";
 
 $content=<<<EOT
-<h1 class="text-danger text-center">DELETE: {$row['title']}</h1>
-<p class="text-danger text-center"><br><br>Are you sure you want to delete {$row['title']}?  </p>
+<h1 class="text-danger text-center">DELETE: {$row['first_name']} {$row['last_name']}"</h1>
+<p class="text-danger text-center"><br><br>Are you sure you want to delete {{$row['first_name']} {$row['last_name']}?</p>
 
 <div class="text-center">
   <a href="users/" class="btn btn-success btn-lg">Cancel</a>

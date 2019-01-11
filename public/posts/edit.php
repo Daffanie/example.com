@@ -20,6 +20,7 @@ if(empty($row)){
   die('Page Not Found <a href="/">Home</a>');
 }
 
+//var_dump($row);
 $meta=[];
 $meta['title']="Edit: {$row['title']}";
 

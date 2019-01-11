@@ -5,11 +5,11 @@ require '../../config/keys.php';
 require '../../core/db_connect.php';
 
 $input = filter_input_array(INPUT_GET);
+
 $id = !(empty($input['id']))?$input['id']:null;
 $email = !(empty($input['email']))?$input['email']:null;
 
 if(!empty($email)){
-
   $lookup =$email;
   $where = 'email = :lookup';
 }else{
@@ -25,7 +25,7 @@ $meta=[];
 $meta['title']="{$row['first_name']} {$row['last_name']}";
 
 $content=<<<EOT
-<br>
+<br><br><br><br>
 <h1>{$row['first_name']} {$row['last_name']}</h1>
 {$row['email']}
 

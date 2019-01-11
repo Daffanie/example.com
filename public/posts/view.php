@@ -1,5 +1,4 @@
 <?php
-
 require '../../config/keys.php';
 require '../../core/db_connect.php';
 
@@ -16,7 +15,7 @@ $meta['description']=$row['meta_description'];
 $meta['keywords']=$row['meta_keywords'];
 
 $content=<<<EOT
-<br>
+<br><br><br><br><br><br>
 <h1>{$row['title']}</h1>
 {$row['body']}
 
