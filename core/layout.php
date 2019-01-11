@@ -65,9 +65,21 @@ function active($name){
                   <a class="nav-link <?php echo active('/posts'); ?>" href="posts">Posts</a>
                 </li>
                 <li>
+                <a class="nav-link <?php echo active('/users'); ?>" href="users">Users</a>
+                </li>
+
+                <li class="nav-item">
+                  <?php if(!empty($_SESSION['users']['id'])): ?>
+                  <a class="nav-link" href="logout.php">Logout</a>
+                  <?php else: ?>
+                  <a class="nav-link <?php echo active('/login.php'); ?>" href="login.php">Login</a>
+                  <?php endif; ?>
+                </li>
+
             </ul>
         </div>
     </nav>
+
     <main class="container"><?php echo $content; ?>
 
     </main>

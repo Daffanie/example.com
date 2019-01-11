@@ -1,4 +1,6 @@
 <?php
+require '../../core/functions.php';
+require '../../core/session.php';
 require '../../config/keys.php';
 require '../../core/db_connect.php';
 
@@ -6,7 +8,7 @@ require '../../core/db_connect.php';
 $meta=[];
 $meta['title']="Bob's Blog";
 
-$content="<h1>Blog Posts</h1>";
+$content="<br><br><br><h1>Blog Posts</h1>";
 $stmt = $pdo->query('SELECT * FROM posts');
 
 while($row = $stmt ->fetch()){

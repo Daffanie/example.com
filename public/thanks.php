@@ -1,5 +1,7 @@
 <?php
+require '../core/functions.php';
 require '../core/processContactForm.php';
+
 $meta=[];
 $meta['title']='Contact Daffanie';
 $meta['Description']='Contact Daffanie';

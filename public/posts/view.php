@@ -16,8 +16,17 @@ $meta['description']=$row['meta_description'];
 $meta['keywords']=$row['meta_keywords'];
 
 $content=<<<EOT
+<br>
 <h1>{$row['title']}</h1>
 {$row['body']}
+
+<hr>
+<div>
+  <br>
+  <a class="btn btn-link" href="posts/edit.php?id={$row['id']}">Edit</a>
+  <a class="btn btn-link text-danger" href="posts/delete.php?id={$row['id']}">Delete</a>
+</div>
+
 EOT;
 
 require '../../core/layout.php';

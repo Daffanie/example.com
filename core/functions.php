@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 /**
  * Strips HTML tags that have not been white listed
@@ -15,7 +16,6 @@ $allowed = '<div><span><pre><p><br><hr><hgroup><h1><h2><h3><h4><h5><h6>
             <caption><table><tbody><td><tfoot><th><thead><tr>
             <iframe>';
 
-    $input['body'] = strip_tags($input['body'],$allowed);
 
     return strip_tags($html, $allowed);
 }
@@ -26,7 +26,7 @@ function slug($string){
   return preg_replace(
   "/[^a-z0-9-]+/",
   "-",
-  strtolower($input['title'])
+  strtolower($string)
 );
 
 }
