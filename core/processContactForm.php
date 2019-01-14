@@ -27,7 +27,7 @@ if(!empty($input)){
     ]],
     'name'=>[[
       'rule'=>'notEmpty',
-      'message'=>'Please enter a your name'
+      'message'=>'Please enter your name'
     ]],
     'message'=>[[
       'rule'=>'notEmpty',

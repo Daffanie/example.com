@@ -18,18 +18,20 @@ if(!empty($input)){
   $stmt->execute(['email'=>$input['email']]);
   $row = $stmt->fetch();
 
-  if($input['email']===$row['email']){
+  $verify = password_verify($input['password'], $row['password']);
+
+  if($input['email']===$row['email'] && $verify === true){
     $_SESSION['user'] = $row;
 
     $args = [
-      'email'=>FILTER_SANITIZE_string,
+      'goto'=>FILTER_SANITIZE_STRING,
     ];
-    $get = filter_input_array(INPUT_GET, $args);
 
-    header('LOCATION: ' . !empty($get['goto'])?$get['goto']:'/');
+    $get = filter_input_array(INPUT_GET, $args);
+    $goto = !empty($get['goto'])?$get['goto']:'/';
+    header('LOCATION: ' . $goto);
   }
 }
-
 
 $content = <<<EOT
 

@@ -12,7 +12,7 @@ function active($name){
 
 ?>
 
-<!Doctype html>
+<!doctype html>
 <html lang="en">
   <head>
 
@@ -62,17 +62,17 @@ function active($name){
                   <a class="nav-link <?php echo active('contact.php'); ?>" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link <?php echo active('/posts'); ?>" href="posts">Posts</a>
+                  <a class="nav-link <?php echo active('/posts/'); ?>" href="posts">Posts</a>
                 </li>
                 <li>
-                <a class="nav-link <?php echo active('/users'); ?>" href="users">Users</a>
+                <a class="nav-link <?php echo active('/users/'); ?>" href="users">Users</a>
                 </li>
 
                 <li class="nav-item">
-                  <?php if(!empty($_SESSION['users']['id'])): ?>
-                  <a class="nav-link" href="logout.php">Logout</a>
+                  <?php if(!empty($_SESSION['user']['id'])): ?>
+                    <a class="nav-link" href="logout.php">Logout</a>
                   <?php else: ?>
-                  <a class="nav-link <?php echo active('/login.php'); ?>" href="login.php">Login</a>
+                    <a class="nav-link <?php echo active('/login.php'); ?>" href="login.php">Login</a>
                   <?php endif; ?>
                 </li>
 

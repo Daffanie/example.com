@@ -31,7 +31,8 @@ $args = [
     'first_name'=>FILTER_SANITIZE_STRING, //strips HMTL
     'last_name'=>FILTER_SANITIZE_STRING, //strips HMTL
     'email'=>FILTER_SANITIZE_EMAIL,  //strips HMTL
-    'id'=>FILTER_SANITIZE_STRING  //strips HMTL
+    'id'=>FILTER_SANITIZE_STRING,  //strips HMTL
+    'password'=>FILTER_UNSAFE_RAW
 ];
 
 
@@ -42,6 +43,16 @@ if(!empty($input)){
     //Strip white space, from beginning and ending
     $input = array_map('trim', $input);
 
+    $hashSQL=false;
+    if(!empty($input['password'])){
+      $hash = password_hash(
+        $input['password'],
+        PASSWORD_BCRYPT,
+        ['cost'=>14]
+      );
+      $hashSQL=",password='{$hash}'";
+    }
+
     //Sanitized insert
     $sql = 'UPDATE
         users
@@ -49,6 +60,7 @@ if(!empty($input)){
         first_name=:first_name,
         last_name=:last_name,
         email=:email,
+        {$hashSQL}
       WHERE
         id=:id';
 
@@ -70,21 +82,26 @@ $content = <<<EOT
 {$message}
 <form method="post">
 
-<input name="id" value="{$row['id']}" type="hidden">
+<input id="id" name="id" value="{$row['id']}" type="hidden">
 
 <div class="form-group">
     <br><label for="first_name">First Name</label>
-    <input id="first_name" name="first_name" type="text" class="form-control">
+    <input id="first_name" value="{$row['first_name']}" name="first_name" type="text" class="form-control">
 </div>
 
 <div class="form-group">
     <br><label for="last_name">Last Name</label>
-    <input id="last_name" name="last_name" type="text" class="form-control">
+    <input id="last_name" value="{$row['last_name']}" name="last_name" type="text" class="form-control">
 </div>
 
 <div class="form-group">
     <br><label for="email">Email</label>
-    <input id="email" name="email" type="email" class="form-control">
+    <input id="email" value="{$row['email']}" name="email" type="email" class="form-control">
+</div>
+
+<div class="form-group">
+    <br><label for="password">Passwird</label>
+    <input id="password" name="password" type="passwor" class="form-control">
 </div>
 
 <div class="form-group">
