@@ -7,5 +7,6 @@ if(!empty($_SESSION ['user']['id'])){
 }
 
 if($hasSession===false){
-  header('Location: /login.php');
+  $goto = $_SERVER['PHP_SELF'];
+  header('Location: /login.php:goto='. $goto);
 }

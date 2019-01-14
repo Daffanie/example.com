@@ -1,5 +1,7 @@
 <?php
 require '../core/functions.php';
+require '../config/keys.php';
+require '../core/db_connect.php';
 
 $args = [
   'email'=>FILTER_SANITIZE_EMAIL,
@@ -10,21 +12,24 @@ $input = filter_input_array(INPUT_POST, $args);
 
 if(!empty($input)){
 
-  //Store POST data to PW and email vars
-  $password=123;
-  $email='bob@example.com';
-
   //DB lookup
-  $user = [
-    'id'=>123,
-    'password'=>123,
-    'email'=>'bob@example.com'
-  ];
+  $sql = 'SELECT * FROM users WHERE email=:email';
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute(['email'=>$input['email']]);
+  $row = $stmt->fetch();
 
-    if($password===$user['password'] && $email===$user['email']){
-      $_SESSION['user']= $user;
+  if($input['email']===$row['email']){
+    $_SESSION['user'] = $row;
+
+    $args = [
+      'email'=>FILTER_SANITIZE_string,
+    ];
+    $get = filter_input_array(INPUT_GET, $args);
+
+    header('LOCATION: ' . !empty($get['goto'])?$get['goto']:'/');
   }
 }
+
 
 $content = <<<EOT
 

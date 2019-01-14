@@ -30,8 +30,8 @@ $message = null;
 $args = [
     'first_name'=>FILTER_SANITIZE_STRING, //strips HMTL
     'last_name'=>FILTER_SANITIZE_STRING, //strips HMTL
-    'email'=>FILTER_SANITIZE_Email,  //strips HMTL
-    'id'=>FILTER_SANITIZE_STRING,  //strips HMTL
+    'email'=>FILTER_SANITIZE_EMAIL,  //strips HMTL
+    'id'=>FILTER_SANITIZE_STRING  //strips HMTL
 ];
 
 
@@ -53,10 +53,11 @@ if(!empty($input)){
         id=:id';
 
     if($pdo->prepare($sql)->execute([
+        'id'=>$input['id'],
         'first_name'=>$input['first_name'],
         'last_name'=>$input['last_name'],
         'email'=>$input['email'],
-        'id'=>$input['id']
+
     ])){
        header('LOCATION:/users/view.php?id=' . $row['id']);
     }else{
@@ -77,7 +78,7 @@ $content = <<<EOT
 </div>
 
 <div class="form-group">
-    <br><label for="last_name">First Name</label>
+    <br><label for="last_name">Last Name</label>
     <input id="last_name" name="last_name" type="text" class="form-control">
 </div>
 
